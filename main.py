@@ -26,7 +26,7 @@ from database import Base, engine
 import models  # noqa: F401
 
 # ── Routers ───────────────────────────────────────────────────────────────────
-from routers import auth, workouts, onboarding
+import auth, workouts, onboarding
 
 load_dotenv()
 
