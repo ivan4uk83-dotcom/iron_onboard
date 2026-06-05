@@ -1,0 +1,23 @@
+# ── Web Framework ─────────────────────────────────────────────────────────────
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+
+# ── Database ──────────────────────────────────────────────────────────────────
+sqlalchemy>=2.0.30
+psycopg2-binary>=2.9.9          # PostgreSQL driver (Supabase / Render)
+alembic>=1.13.1                 # Database migrations
+
+# ── Validation & Settings ─────────────────────────────────────────────────────
+pydantic>=2.7.0
+pydantic-settings>=2.3.0        # BaseSettings for .env parsing
+
+# ── Auth & Security ───────────────────────────────────────────────────────────
+passlib[bcrypt]>=1.7.4          # Password hashing
+python-jose[cryptography]>=3.3.0 # JWT tokens
+python-multipart>=0.0.9         # Required for OAuth2 form-based login
+
+# ── Email validation (required by Pydantic's EmailStr) ───────────────────────
+email-validator>=2.0.0
+
+# ── Environment ───────────────────────────────────────────────────────────────
+python-dotenv>=1.0.1
