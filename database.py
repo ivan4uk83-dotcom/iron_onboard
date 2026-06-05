@@ -30,6 +30,9 @@ else:
     if not DATABASE_URL.startswith("postgresql+psycopg2://"):
         # Already correct scheme (e.g. "postgresql://…") — just ensure driver suffix
         DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+psycopg2://", 1)
+    # Supabase / Render require SSL — append if not already present
+    if "sslmode" not in DATABASE_URL:
+        DATABASE_URL += ("&" if "?" in DATABASE_URL else "?") + "sslmode=require"
     print("[DB] Using PostgreSQL database.")
 
 # ── 2. Engine ─────────────────────────────────────────────────────────────────
